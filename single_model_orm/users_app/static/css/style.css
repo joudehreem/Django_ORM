@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(45deg, #49a09d, #5f2c82);
+  font-family: sans-serif;
+  text-align: center;
+}
+h1{
+  color:#2f2b7e;
+
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table {
+  width: 700px;
+  border-collapse: collapse;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+  padding: 10px;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+th {
+  text-align: center;
+}
+
+thead th {
+  background-color: #55608f;
+}
+
+label {
+  color: #fff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  padding: 10px;
+  border: none;
+  background-color: rgba(255,255,255,0.2);
+  color: #fff;
+  margin: 10px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4f4caf;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}

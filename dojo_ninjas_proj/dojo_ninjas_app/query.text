@@ -1,0 +1,54 @@
+>>> from dojo_ninjas_app.models import *
+dojo1 = Dojo.objects.create(name="Jon",city="Phoenix",stat="AZ")
+
+>>> dojo1 = Dojo.objects.create(name="Jon",city="Phoenix",stat="AZ")
+>>> dojo2 = Dojo.objects.create(name="Diana",city="Houston",stat="TX")
+>>> dojo3 = Dojo.objects.create(name="Romy",city="Philadelphia",stat="PA")
+
+
+>>> Dojo.objects.all().delete()
+
+>>> dojo1 = Dojo.objects.create(name="Andy",city="Phoenix",stat="AZ")
+>>> dojo2 = Dojo.objects.create(name="Harry",city="Houston",stat="TX")
+>>> dojo3 = Dojo.objects.create(name="Tom",city="Philadelphia",stat="PA)
+
+
+d1ninja1 = Ninja.objects.create(dojo=dojo1, first_name="Mary",last_name="Jone")
+d1ninja2 = Ninja.objects.create(dojo=dojo1, first_name="Tomy",last_name="Tim") 
+d1ninja3 = Ninja.objects.create(dojo=dojo1, first_name="Loly",last_name="Oscar")
+
+d2ninja1 = Ninja.objects.create(dojo=dojo2, first_name="Elzabith",last_name="Mark")
+d2ninja2 = Ninja.objects.create(dojo=dojo2, first_name="Carrol",last_name="Huang")
+d2ninja3 = Ninja.objects.create(dojo=dojo2, first_name="Kris",last_name="Kevin")
+
+
+d3ninja1 = Ninja.objects.create(dojo=dojo3, first_name="Max",last_name="Patric")
+d3ninja2 = Ninja.objects.create(dojo=dojo3, first_name="Sara",last_name="Denis")
+d3ninja3 = Ninja.objects.create(dojo=dojo3, first_name=Lura"",last_name="Denny")
+
+>>> dojo_ninjas_first= Ninja.objects.get(dojo=dojo4)
+
+>>> Ninja.objects.filter(dojo__id=4)                        
+<QuerySet [<Ninja: Ninja object (1)>, <Ninja: Ninja object (2)>, <Ninja: Ninja object (3)>]>
+
+ <QuerySet [<Ninja: Ninja object (7)>, <Ninja: Ninja object (8)>, <Ninja: Ninja object (9)>]>
+
+
+
+>>> Ninja.objects.last().dojo
+<Dojo: Dojo object (6)>
+>>> Ninja.objects.last().dojo.name
+'Tom'
+
+>>> Dojo.objects.last().desc                                
+'old dojo'
+
+
+>>> from dojo_ninjas_app.models import Dojo 
+>>> new_desc_dojo=Dojo.objects.get(id=4) 
+>>> new_desc_dojo.desc  
+'old dojo'
+>>> new_desc_dojo.desc="New"
+>>> new_desc_dojo.save()    
+>>> new_desc_dojo.desc      
+'New'

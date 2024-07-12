@@ -1,9 +1,5 @@
-
-
 from django.db import models
-
 # Create your models here.
-
 class Book(models.Model):
   title = models.CharField(max_length=225)
   desc = models.TextField()
@@ -37,15 +33,17 @@ def get_book(id_book):
 #Get all authors
 def all_authors():
   return Author.objects.all()
+  #return Author.objects.all().values("first_name")
 
 #create a new author using request post
-def create_authors(request):
+def create_authors(authors):
   Author.objects.create(
-          first_name = request.POST['first_name'],
-          last_name = request.POST['last_name'])
+          first_name = authors.POST['first_name'],
+          last_name = authors.POST['last_name'])
   
 #Get an author by ID
 def get_author(id_author):
     return Author.objects.get(id=id_author)
 
-
+# def other_books(this_author):
+#     return Book.objects.exclude(authors=this_author)

@@ -27,7 +27,7 @@ def view_book(request,id_book):
 #Assign the authors to a book using id 
 def authors_add_book(request,id_book):
     this_book =  get_book(id_book)
-    author = Author.objects.get(id=request.POST['id_author'])
+    author = get_author(request.POST['id_author'])
     this_book.authors.add(author)
     return redirect(f'/books/{id_book}')
 
@@ -60,7 +60,7 @@ def view_author(request,id_author):
 #Assign the books to an author using id 
 def books_add_author(request, id_author):
     this_author = get_author(id_author)
-    book = Book.objects.get(id=request.POST['id_book'])
+    book = get_book(request.POST['id_book'])
     this_author.books.add(book)
     return redirect(f'/authors/{id_author}')
 
